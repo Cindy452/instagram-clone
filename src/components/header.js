@@ -4,6 +4,7 @@ import FirebaseContext from '../context/firebase';
 import UserContext from '../context/user';
 import * as ROUTES from '../constants/routes';
 import logo from '../assets/logo.jpg';
+import images from '../assets/images.png';
 
 export default function Header() {
     const { firebase } = useContext(FirebaseContext);
@@ -68,8 +69,8 @@ export default function Header() {
                                 <div className="flex items-center cursor-pointer">
                                     <Link to={`/p/${user.displayName}`}>
                                         <img
-                                            className="rounded-full h-8 w-8 flex"
-                                            src={`/assets/${user.displayName}.jpg`}
+                                            className="rounded-full h-12 w-12 flex"
+                                            src={images}
                                             alt={`${user.displayName} profile picture`}
                                         />
                                     </Link>

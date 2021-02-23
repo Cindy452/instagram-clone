@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import useUser from '../../hooks/use-user';
 import { isUserFollowingProfile, toggleFollow } from '../../services/firebase';
+import images from '../../assets/images.png';
 
 export default function Header({ 
     photosCount,
@@ -39,7 +40,7 @@ export default function Header({
                 <img
                     className="rounded-full h-40 w-40 flex"
                     alt={`${username} profile picture`}
-                    src={`/images/avatars/${username}.jpg`}
+                    src={images}
                 />
             </div>
             <div className="flex items-center justify-center flex-col col-span-2">
