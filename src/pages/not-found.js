@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Header from '../components/header';
+import Header from '../components/header.js';
 
 export default function NotFound() {
     useEffect(() => {
@@ -15,4 +15,3 @@ export default function NotFound() {
         </div>
     )
 }
-

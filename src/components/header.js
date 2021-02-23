@@ -1,14 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
+import UserContext from '../context/user';
 import * as ROUTES from '../constants/routes';
 import logo from '../assets/logo.jpg';
 
 export default function Header() {
     const { firebase } = useContext(FirebaseContext);
-    const user = {
-        displayName: "karl"
-    };
+    const { user } = useContext(UserContext);
     
     return (
         <header className="h-16 bg-white border-b mb-8">
@@ -66,6 +65,15 @@ export default function Header() {
                                         />
                                     </svg>
                                 </button>
+                                <div className="flex items-center cursor-pointer">
+                                    <Link to={`/p/${user.displayName}`}>
+                                        <img
+                                            className="rounded-full h-8 w-8 flex"
+                                            src={`/assets/${user.displayName}.jpg`}
+                                            alt={`${user.displayName} profile picture`}
+                                        />
+                                    </Link>
+                                </div>
                             </>
                         ) : (
                             <>
